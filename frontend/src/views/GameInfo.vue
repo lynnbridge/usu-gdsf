@@ -5,7 +5,7 @@
 		<v-card>
 			{{ rating }}
 			<v-img width="200" :src="image"></v-img>
-			<router-link :to="{ name: 'info', params: { id: '2' }}">To another game</router-link>
+			<!-- <router-link :to="{ name: 'info', params: { id: '2' }}">To another game</router-link> -->
 	<!-- Title -->
 	<!-- Ratings -->
 	<!-- Overview: Image -->
@@ -21,7 +21,8 @@ export default {
 	data: () => ({
 		gameTitle: 'Big Blue Game',
 		rating: 3,
-		image: 'https://st2.depositphotos.com/2927537/7025/i/950/depositphotos_70253417-stock-photo-funny-monkey-with-a-red.jpg'
+		image: 'https://st2.depositphotos.com/2927537/7025/i/950/depositphotos_70253417-stock-photo-funny-monkey-with-a-red.jpg',
+		description: 'This is a description of a game that was developed at USU by such and such students. Immerse yourself in the work of novice programmers who are facinated with the stuff of computer science. Or maybe they just wanted to pass the class. Lol.'
 	}),
 
 	computed: {

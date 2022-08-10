@@ -50,56 +50,38 @@
 			</div>
 	</v-card>
 </template>
-
 <script>
-import axios from 'axios';
+  export default {
+    name: 'EditUser',
+    data: () => ({
+      gameName : '',
+      gameAuthor : '',
+      gameDesc : '',
+      gameFile : '',
+      url : '',
+    }),
 
-export default {
-	name: 'AddGame',
-
-
-  data() {
-    return {
-		gameName: '',
-		gameDesc: '',
-		gameAuthor: '',
-		gameFile: '',
-		gameImage: '',
-		url: null,
-		}
-	},
-
-	//submit
-	methods: {
-		submitGame() {
-			this.axios.post('/game/add', {
-				gameName: this.gameName,
-				gameDesc: this.gameDesc,
-				gameAuthor: this.gameAuthor,
-				gameFile: this.gameFile,
-				gameImage: this.gameImage,
-			}).then(response => {
-				console.log(response + "success");
-			}).catch(error => {
-				console.log(error);
-			});
-			//refresh form after submission
-			
-			// this.gameName = '';
-			// this.gameDesc = '';
-			// this.gameAuthor = '';
-			// this.gameFile = '';
-			// this.gameImage = '';
-			// this.url = null;
-			
-		},
-		onFileChange(e) {
-      const file = e.target.files[0];
-      this.url = URL.createObjectURL(file);
+    methods: {
+      validate () {
+        this.$refs.form.validate()
+        //Post user changes to database here
+      },
     },
-	}
 
-}
+    watch: {
+      '$route.params': {
+        handler: function(params) {
+          this.gameName = params.gameName;
+          this.gameAuthor = params.gameAuthor;
+          this.gameDesc = params.gameDesc;
+          this.gameFile = params.gameFile;
+          this.url = params.url;
+        },
+        deep: true,
+        immediate: true
+      }
+    }
+  }
 </script>
 
 <style>

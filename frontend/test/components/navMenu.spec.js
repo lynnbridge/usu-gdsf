@@ -1,4 +1,4 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import NavMenu from '../../src/components/NavMenu.vue'
 
 // tests by Kailey Bales

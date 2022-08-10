@@ -69,15 +69,18 @@ export default {
 		}
 	},
 
+
 	//submit
 	methods: {
 		submitGame() {
-			this.axios.post('/game/add', {
-				gameName: this.gameName,
-				gameDesc: this.gameDesc,
-				gameAuthor: this.gameAuthor,
-				gameFile: this.gameFile,
-				gameImage: this.gameImage,
+			this.$axios.post('/game/add', {
+				id: '',
+				name: this.gameName,
+				description: this.gameDesc,
+				userid: '',
+				creationdate: '',
+				version: '',
+				tags: '',
 			}).then(response => {
 				console.log(response + "success");
 			}).catch(error => {

@@ -22,12 +22,13 @@
 import { defineComponent } from 'vue';
 
 
-export default defineComponent({
+export default{
   name: 'NavMenu',
 
   data: () => ({
     defaultGame: 1
   }),
+<<<<<<< Updated upstream
 
   computed: {
     appBarDisplay() {
@@ -39,4 +40,8 @@ export default defineComponent({
 
   },
 });
+=======
+  
+};
+>>>>>>> Stashed changes
 </script>

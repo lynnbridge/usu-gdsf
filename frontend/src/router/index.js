@@ -27,6 +27,35 @@ const router = createRouter({
       name: 'admin',
       component: () => import('../views/AdminPage.vue')
     },
+<<<<<<< Updated upstream
+=======
+    {
+<<<<<<< HEAD
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+=======
+      path: '/admin/all-users',
+      name: 'all-users',
+      component: () => import('../views/AdminAllUsers.vue')
+    },
+    {
+      path: '/games',
+      name: 'games',
+      component: () => import('../views/GameListView.vue')
+    },
+    {
+      path: '/game/add',
+      name: 'addGame',
+      component: () => import('../views/AddGame.vue')
+    },
+    {
+      path: '/allGames',
+      name: 'allGames',
+      component: () => import('../views/AdminAllGames.vue')
+>>>>>>> origin/team2-main
+    },
+>>>>>>> Stashed changes
   ]
 })
 
